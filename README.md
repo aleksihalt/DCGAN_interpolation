@@ -9,7 +9,7 @@
 
 ## FOLDER DIRECTORY
 **/dataGeneration.ipynb**  
-Code used for data collection; collecting pictures from video frames (and manipulating them).  Any type of video can be used.
+Code used for data collection; collecting pictures from video frames (and manipulating them if needed).  Any type of video can be used.
   
 **/DCGANwithVideoOutput.ipynb**  
 DCGAN model that outputs latent space interpolation video. Run on Google Colab https://colab.research.google.com/notebooks/intro.ipynb# with the runtime set to GPU (Runtime -> Change runtime type -> Hardware Accelerator: GPU).
@@ -40,7 +40,7 @@ First I played around with some 64x64 DCGAN found on the internet to get used to
 
 I found this great tutorial for building a DCGAN for 256x256 output here: https://www.ritchievink.com/blog/2018/07/16/generative-adversarial-networks-in-pytorch-the-distribution-of-art/. This was perfect because on Google Colab, having any higher output would mean ridiculously long training times, and I wanted to be able to go back and fine-tune the algorithm in case I was not happy with the outcome. 
 
-Having had only little preactical experience with machine learning models, I had to dig much deeper than in class, and ultimately try many different approaches, but learning a lot along the way. As I did not have the expertise to develop the actual model myself, the most difficult part of my project had to with the logistics around it, choosing and preparing the data, getting the provided model code to run on Google Colab, and then wrapping my head around how latent space interpolation works in practice.  
+Having had only little practical experience with machine learning models, I had to dig much deeper than in class, and ultimately try many different approaches, but learning a lot along the way. As I did not have the expertise to develop the actual model myself, the most difficult part of my project had to with the logistics around it, choosing and preparing the data, getting the provided model code to run on Google Colab (the code was written for CUDA), and then wrapping my head around how latent space interpolation works in practice.  
 
 I ended up using a simple linear interpolation (instead of more sophisticated options like SLERP), where I took two input tensors, and made every element in one of these tensors change linearly to the corresponding elements in the other. 100 frames were generated of this gradual change for the latent space between 8 randomly generated input tensors, resulting in 800 input tensors for the generator, ultimately generating a looping latent space interpolation video of 800 frames, at 30 frames per second (this was later sped up for aesthetic reasons).
 
