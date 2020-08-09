@@ -1,11 +1,9 @@
 ### MSc Creative Computing, Coding 2: Advanced Frameworks
 # Final Project - Aleksi Halttunen
 
-## LINKS TO ART (video)
+## LINK TO ART (video)
 ## **'Three studies on fear'**
-### 1/3 https://vimeo.com/408648734  
-### 2/3 https://vimeo.com/408652449  
-### 3/3 https://vimeo.com/408653010
+### https://vimeo.com/443874499
 
 ## FOLDER DIRECTORY
 **/dataGeneration.ipynb**  
